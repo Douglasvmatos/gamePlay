@@ -34,8 +34,12 @@ export function AppointmentCreate() {
     function handleGuildSelect(guildSelect: GuildProps) {
         setGuild(guildSelect)
         setOpenGuildsModal(false)
-
     }
+
+    function handleCategorySelect(categoryId: string) {
+        categoryId === category ? setCategory('') : setCategory(categoryId)
+    }
+
 
     return (
         <KeyboardAvoidingView 
@@ -57,7 +61,7 @@ export function AppointmentCreate() {
 
             <CategorySelector
                 hasCheckBox
-                setCategory={setCategory}
+                setCategory={handleCategorySelect}
                 categorySelected={category}
             />
 

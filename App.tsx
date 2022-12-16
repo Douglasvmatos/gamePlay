@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { View, StatusBar } from 'react-native';
+import { View, StatusBar, LogBox } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 
@@ -8,8 +8,11 @@ import { Inter_500Medium, Inter_400Regular } from "@expo-google-fonts/inter"
 
 // import { SignIn } from './src/screens/SignIn';
 import { Routes } from "./src/routes"
+import { AuthProvider } from './src/hooks/auth';
 
 SplashScreen.preventAutoHideAsync();
+
+LogBox.ignoreLogs(['You are not currently signed in to Expo on your development machine.'])
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -50,7 +53,9 @@ export default function App() {
           barStyle="light-content"
           backgroundColor="transparent"
           translucent />
+      <AuthProvider>
         <Routes />
+      </AuthProvider>
     </View>
   );
 }

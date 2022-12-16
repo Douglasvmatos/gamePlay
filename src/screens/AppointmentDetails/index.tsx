@@ -59,7 +59,7 @@ export function AppointmentDetails(){
                 keyExtractor={item => item.id}
                 renderItem={({item}) => (
                     <Member data={item} />
-                )}
+                    )}
                 ItemSeparatorComponent={() => <ListDivider 
                     />}
                 style={styles.member}

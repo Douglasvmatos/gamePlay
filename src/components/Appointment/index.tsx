@@ -10,7 +10,7 @@ import CalendarSvg from '../../assets/calendar.svg';
 
 import { GuildIcon } from '../GuildIcon';
 import { categories } from '../../utils/categories';
-
+import { GuildProps } from '../Guild';
 
 export type AppointmentProps = {
   id: string;
@@ -32,8 +32,8 @@ export function Appointment({ data, ...rest }: Props) {
   return (
     <RectButton {...rest}>
       <View style={styles.container}>
-        <View>
-            <GuildIcon guildId={data.guild.id} iconId={data.guild.icon} />
+        <View style={styles.guildIconContainer}>
+          <GuildIcon guildId={data.guild.id} iconId={data.guild.icon} />
         </View>
 
         <View style={styles.content}>
