@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-evenly',
         alignItems: 'center',
-        backgroundColor: 'blue'
+        backgroundColor: 'blue',
   },
   title: {
     flex: 1,

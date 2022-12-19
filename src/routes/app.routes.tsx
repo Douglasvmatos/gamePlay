@@ -9,7 +9,7 @@ import { AppointmentCreate } from '../screens/AppointmentCreate';
 const { Screen, Navigator } = createNativeStackNavigator();
 
 
-export function AuthRoutes() {
+export function AppRoutes() {
   return(
     <Navigator>     
       <Screen 
